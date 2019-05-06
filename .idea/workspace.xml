@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac905581-b41d-47bf-8a12-57688cfb993f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron-quick-start/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/electron-quick-start/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wactorrent/node-libtorrent/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/wactorrent/node-libtorrent/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wactorrent/node-libtorrent/src/entry.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/wactorrent/node-libtorrent/src/entry.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electron-quick-start/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/electron-quick-start/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electron-quick-start/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/electron-quick-start/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electron-quick-start/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/electron-quick-start/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,34 +38,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="199" />
-          <entry key="js" value="5" />
+          <entry key="html" value="216" />
+          <entry key="js" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="199" />
-          <entry key="JavaScript" value="5" />
+          <entry key="HTML" value="216" />
+          <entry key="JavaScript" value="40" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/electron-quick-start/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1352">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wactorrent/node-libtorrent/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+            <state relative-caret-position="468">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -79,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="85" column="68" selection-start-line="85" selection-start-column="68" selection-end-line="85" selection-end-column="68" />
+            <state relative-caret-position="334">
+              <caret line="109" selection-start-line="109" selection-end-line="109" />
             </state>
           </provider>
         </entry>
@@ -92,12 +83,20 @@
         <entry file="file://$PROJECT_DIR$/electron-quick-start/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="520">
-              <caret line="102" column="45" lean-forward="true" selection-end-line="241" selection-end-column="7" />
+              <caret line="102" column="45" selection-end-line="241" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>02300bd</find>
+      <find>output</find>
+      <find>remaining</find>
+      <find>total</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -109,6 +108,7 @@
         <option value="$PROJECT_DIR$/test/main.js" />
         <option value="$PROJECT_DIR$/electron-quick-start/index.html" />
         <option value="$PROJECT_DIR$/test/index.html" />
+        <option value="$PROJECT_DIR$/electron-quick-start/main.js" />
       </list>
     </option>
   </component>
@@ -120,15 +120,14 @@
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/electron-quick-start/node_modules" />
+    <handled-path value="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/node_modules" />
     <handled-path value="$PROJECT_DIR$/test/node_modules" />
-    <handled-path value="$PROJECT_DIR$/wactorrent/node-libtorrent/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/electron-quick-start/package.json" />
+      <path value="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/package.json" />
       <path value="$PROJECT_DIR$/test/package.json" />
-      <path value="$PROJECT_DIR$/wactorrent/node-libtorrent/package.json" />
-      <path value="$PROJECT_DIR$/wactorrent/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -157,7 +156,23 @@
             <path>
               <item name="WacTorrent" type="b2602c69:ProjectViewProjectNode" />
               <item name="WacTorrent" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="electron-quick-start" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WacTorrent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WacTorrent" type="462c0819:PsiDirectoryNode" />
+              <item name="electron-quick-start" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WacTorrent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WacTorrent" type="462c0819:PsiDirectoryNode" />
+              <item name="electron-quick-start" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -196,12 +211,12 @@
       <updated>1557130537312</updated>
       <workItem from="1557130538692" duration="599000" />
       <workItem from="1557136839080" duration="773000" />
-      <workItem from="1557145940279" duration="3268000" />
+      <workItem from="1557145940279" duration="6512000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4640000" />
+    <option name="totallyTimeSpent" value="7884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -235,13 +250,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/electron-quick-start/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1352">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wactorrent/node-libtorrent/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -259,14 +267,21 @@
     <entry file="file://$PROJECT_DIR$/electron-quick-start/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
-          <caret line="102" column="45" lean-forward="true" selection-end-line="241" selection-end-column="7" />
+          <caret line="102" column="45" selection-end-line="241" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="85" column="68" selection-start-line="85" selection-start-column="68" selection-end-line="85" selection-end-column="68" />
+        <state relative-caret-position="334">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electron-quick-start/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
         </state>
       </provider>
     </entry>
