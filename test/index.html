@@ -83,7 +83,7 @@
 <script src="http://momentjs.com/downloads/moment.min.js"></script>
 
 <script>
-    var torrentId = 'http://localhost/wactorrent/test/[Issou-Fansub] Dragon Ball Super - 131 - FINAL [720p] [VOSTFR].mkv.torrent'
+    var torrentId = 'http://localhost/wactorrent/test/test.torrent'
 
     var client = new WebTorrent()
 
@@ -102,7 +102,7 @@
 
         // Torrents can contain many files. Let's use the .mp4 file
         var file = torrent.files.find(function (file) {
-            return file.name.endsWith('.mp4')
+            return file
         })
 
         // Stream the file in the browser
