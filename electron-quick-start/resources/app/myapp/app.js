@@ -54,7 +54,7 @@ app.use(function(err, req, res, next) {
 });
 var torrentidreturn = 0;
 
-
+var allTorretns = [];
 
 
 
@@ -70,6 +70,7 @@ io.on('connection', function(socket){
         //On initialise WebTorrent
         var client = new WebTorrent()
         var torrentId = data.id;
+        var number = data.number;
 
         console.log(data.id);
 
@@ -77,16 +78,19 @@ io.on('connection', function(socket){
         client.add(torrentId, {path: data.path }, function (torrent) {
             // Torrents can contain many files. Let's use the .mp4 file
 
-            io.emit('create', torrentidreturn);
-            torrentidreturn++;
+            io.emit('create', number);
+
 
             //On récupère le fichier dans le torrent et on le return afin de lancer le téléchargement
             var file = torrent.files.find(function (file) {
                 return file
             })
+            torrentidreturn++;
 
             //Lorsque le torrent a fini de télécharger, on appelle la fonctio OnDone
-            torrent.on('done', onDone)
+            torrent.on('done', function () {
+                onDone(number);
+            })
             //On met une intervalle sur OnProgress afin d'appeller la fonction toutes les 0.5 sec et pouvoir récupérer
             // les informations pendant le téléchargement
             var interval = setInterval(onProgress, 500)
@@ -109,25 +113,31 @@ io.on('connection', function(socket){
 
 
                 var data = {
-                    torrentid: torrentidreturn,
+                    id: number,
+                    torrentid: file.name,
                     peers: torrent.numPeers + (torrent.numPeers === 1 ? ' peer' : ' peers'),
                     percent: Math.round(torrent.progress * 100 * 100) / 100,
                     downloaded: prettyBytes(torrent.downloaded),
                     total: prettyBytes(torrent.length),
                     dlspeed : prettyBytes(torrent.downloadSpeed) + '/s',
                     upspeed : prettyBytes(torrent.uploadSpeed) + '/s',
-                    remaining: remaining
+                    remaining: remaining,
+                    name: file.name
                 };
+
+                allTorretns.push(data);
 
                 //On émit au front l'évènement progress avec un array contenant toutes les informations sur le
                 // téléchargement
-                io.emit('progress', data);
+                io.emit('progress', allTorretns);
+                allTorretns = [];
+
             }
-            function onDone () {
+            function onDone (number) {
                 //On clear l'interval sinon on va recevoir les données absolument tout le temps et on envoie au front
                 //l'évènement finish pour actualiser le front lorsque c'est fini
                 clearInterval(interval);
-                io.emit('finish', data)
+                io.emit('finish', number)
             }
 
             //Cette fonction permet de return les bytes mais de façon plus "jolie" :)

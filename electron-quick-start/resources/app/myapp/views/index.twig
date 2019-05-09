@@ -53,33 +53,6 @@
 <input type="text" id="path" value="C:\Users\02300bd\Downloads"/>
 <input type="text" placeholder="your magnet" id="magnet">
 <input type="button" id="dl" value="download">
-<div id="hero">
-    <div id="output">
-        <div id="progressBar"></div>
-        <!-- The video player will be added here -->
-    </div>
-    <!-- Statistics -->
-    <div id="status">
-        <div>
-            <span class="show-leech">Downloading </span>
-            <span class="show-seed">Seeding </span>
-            <code>
-                <!-- Informative link to the torrent file -->
-                <a id="torrentLink" href="#">Torrent</a>
-            </code>
-            <span class="show-leech"> from </span>
-            <span class="show-seed"> to </span>
-            <code id="numPeers">0 peers</code>.
-        </div>
-        <div>
-            <code id="downloaded"></code>
-            of <code id="total"></code>
-            — <span id="remaining"></span><br/>
-            &#x2198;<code id="downloadSpeed">0 b/s</code>
-            / &#x2197;<code id="uploadSpeed">0 b/s</code>
-        </div>
-    </div>
-</div>
 <div id="torrents">
 
 </div>
@@ -93,17 +66,39 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
 <script>
+    var i = 0;
+    var x = 0;
     $('#dl').on('click', function () {
 
 
-        var $body = document.body
-        var $progressBar = document.querySelector('#progressBar')
-        var $numPeers = document.querySelector('#numPeers')
-        var $downloaded = document.querySelector('#downloaded')
-        var $total = document.querySelector('#total')
-        var $remaining = document.querySelector('#remaining')
-        var $uploadSpeed = document.querySelector('#uploadSpeed')
-        var $downloadSpeed = document.querySelector('#downloadSpeed')
+        $('#torrents').append('<div id="'+x+'"><div id="hero">\n' +
+            '    <div id="output">\n' +
+            '        <div id="progressBar"></div>\n' +
+            '        <!-- The video player will be added here -->\n' +
+            '    </div>\n' +
+            '    <!-- Statistics -->\n' +
+            '    <div id="status">\n' +
+            '        <div>\n' +
+            '            <span class="show-leech">Downloading </span>\n' +
+            '            <span class="show-seed">Seeding </span>\n' +
+            '            <code>\n' +
+            '                <!-- Informative link to the torrent file -->\n' +
+            '                <a id="torrentLink" href="#">Torrent</a>\n' +
+            '            </code>\n' +
+            '            <span class="show-leech"> from </span>\n' +
+            '            <span class="show-seed"> to </span>\n' +
+            '            <code id="numPeers">0 peers</code>.\n' +
+            '        </div>\n' +
+            '        <div>\n' +
+            '            <code id="downloaded"></code>\n' +
+            '            of <code id="total"></code>\n' +
+            '            — <span id="remaining"></span><br/>\n' +
+            '            &#x2198;<code id="downloadSpeed">0 b/s</code>\n' +
+            '            / &#x2197;<code id="uploadSpeed">0 b/s</code>\n' +
+            '        </div>\n' +
+            '    </div>\n' +
+            '</div></div>');
+        x++;
 
 
 
@@ -114,8 +109,10 @@
         //     path et on met le tout dans un Array ( ici data )
         var data = {
                 id: $('#magnet').val(),
-                path: $('#path').val()
+                path: $('#path').val(),
+                number: i,
             };
+        i++;
 
 
         // On "émite" à socket l'array data, ça signifie que l'on envoie cet array au côté serveur ( back / app.js )
@@ -124,19 +121,26 @@
 
         //On écoute l'évènement 'progress' qui sera envoyé par notre serveur afin de mettre à jour le front
         socket.on('progress', function (msg) {
-            $numPeers.innerHTML = msg.peers;
-            $progressBar.style.width = msg.percent + '%';
-            $downloaded.innerHTML = msg.downloaded;
-            $total.innerHTML = msg.total;
-            $downloadSpeed.innerHTML = msg.dlspeed
-            $uploadSpeed.innerHTML = msg.upspeed
-            $remaining.innerHTML = msg.remaining
+            $('#'+msg.torrentid+' #numPeers').innerHTML = msg.peers;
+            $.each( msg, function(key, value ) {
+                console.log(value, key);
+                $('#'+value.id+ " #numPeers").text(value.peers);
+                $('#'+value.id+ " #progressBar").width(value.percent + '%');
+                $('#'+value.id+ " #downloaded").text(value.downloaded);
+                $('#'+value.id+ " #total").text(value.total)
+                $('#'+value.id+ " #downloadSpeed").text(value.dlspeed)
+                $('#'+value.id+ " #uploadSpeed").text(value.upspeed)
+                $('#'+value.id+ " #remaining").text(value.remaining)
+                $('#'+value.id+ " #torrentLink").text(value.name)
+            });
         })
 
         //On écoute l'évènement finish pour mettre à jour le front
         socket.on('finish', function (msg) {
-            $body.className += ' is-seed'
-            $remaining.innerHTML = 'done'
+            console.log(msg);
+            $('#'+msg).addClass('is-seed');
+            $('#'+msg+ " #remaining").text('done');
+            $('#'+msg+ " #progressBar").width('100%');
         })
     })
 </script>
