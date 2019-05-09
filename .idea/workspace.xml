@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ac905581-b41d-47bf-8a12-57688cfb993f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electron-quick-start/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/electron-quick-start/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/views/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/views/index.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,15 +42,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="241" />
-          <entry key="js" value="1052" />
-          <entry key="twig" value="890" />
+          <entry key="js" value="1193" />
+          <entry key="twig" value="1021" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="241" />
-          <entry key="JavaScript" value="1052" />
-          <entry key="Twig" value="890" />
+          <entry key="JavaScript" value="1193" />
+          <entry key="Twig" value="1021" />
         </counts>
       </usages-collector>
     </session>
@@ -63,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/electron-quick-start/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            <state relative-caret-position="131">
+              <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -72,17 +69,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/electron-quick-start/resources/app/myapp/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="110" column="40" selection-start-line="110" selection-start-column="40" selection-end-line="110" selection-end-column="40" />
+            <state relative-caret-position="502">
+              <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="155" selection-end-column="5" />
+            <state relative-caret-position="859">
+              <caret line="155" column="5" lean-forward="true" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -90,7 +87,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/electron-quick-start/resources/app/myapp/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1014">
+            <state relative-caret-position="-368">
               <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
             </state>
           </provider>
@@ -105,20 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/electron-quick-start/resources/app/myapp/views/index.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/electron-quick-start/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4107">
-              <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
+            <state relative-caret-position="1920">
+              <caret line="118" column="46" lean-forward="true" selection-start-line="118" selection-start-column="46" selection-end-line="118" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -146,6 +134,8 @@
       <find>3000</find>
       <find>moment</find>
       <find>remaining</find>
+      <find>test</find>
+      <find>hero</find>
     </findStrings>
     <dirStrings>
       <dir>C:\wamp64\www\WacTorrent\electron-quick-start\resources\app\myapp</dir>
@@ -160,13 +150,13 @@
         <option value="$PROJECT_DIR$/wactorrent/node-libtorrent/main.js" />
         <option value="$PROJECT_DIR$/test/main.js" />
         <option value="$PROJECT_DIR$/electron-quick-start/index.html" />
-        <option value="$PROJECT_DIR$/electron-quick-start/main.js" />
         <option value="$PROJECT_DIR$/test/index.html" />
         <option value="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/routes/test.js" />
         <option value="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/views/torrent_dl.twig" />
         <option value="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/routes/index.js" />
         <option value="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/app.js" />
         <option value="$PROJECT_DIR$/electron-quick-start/resources/app/myapp/views/index.twig" />
+        <option value="$PROJECT_DIR$/electron-quick-start/main.js" />
       </list>
     </option>
   </component>
@@ -289,12 +279,12 @@
       <workItem from="1557136839080" duration="773000" />
       <workItem from="1557145940279" duration="6512000" />
       <workItem from="1557215619184" duration="22442000" />
-      <workItem from="1557388156683" duration="3531000" />
+      <workItem from="1557388156683" duration="10434000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33857000" />
+    <option name="totallyTimeSpent" value="40760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -320,6 +310,27 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26308724" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -333,24 +344,10 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/electron-quick-start/resources/app/myapp/views/torrent_dl.twig" />
-    <entry file="file://$PROJECT_DIR$/electron-quick-start/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/electron-quick-start/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4107">
-          <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -361,31 +358,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/index.html">
+    <entry file="file://$PROJECT_DIR$/electron-quick-start/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="155" selection-end-column="5" />
+        <state relative-caret-position="-2157">
+          <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electron-quick-start/resources/app/myapp/views/index.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="118" column="46" lean-forward="true" selection-start-line="118" selection-start-column="46" selection-end-line="118" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/electron-quick-start/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/electron-quick-start/resources/app/myapp/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1014">
+        <state relative-caret-position="-368">
           <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/electron-quick-start/resources/app/myapp/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="110" column="40" selection-start-line="110" selection-start-column="40" selection-end-line="110" selection-end-column="40" />
+        <state relative-caret-position="502">
+          <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/electron-quick-start/resources/app/myapp/views/index.twig">
+    <entry file="file://$PROJECT_DIR$/test/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+        <state relative-caret-position="859">
+          <caret line="155" column="5" lean-forward="true" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
         </state>
       </provider>
     </entry>

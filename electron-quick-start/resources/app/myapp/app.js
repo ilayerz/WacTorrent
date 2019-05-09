@@ -52,6 +52,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+var torrentidreturn = 0;
 
 io.on('connection', function(socket){
     socket.on('test', function (data) {
@@ -77,6 +78,10 @@ io.on('connection', function(socket){
 
         client.add(torrentId, {path: data.path }, function (torrent) {
             // Torrents can contain many files. Let's use the .mp4 file
+
+            io.emit('create', torrentidreturn);
+            torrentidreturn++;
+
             var file = torrent.files.find(function (file) {
                 return file
             })
@@ -102,6 +107,7 @@ io.on('connection', function(socket){
 
 
                 var data = {
+                    torrentid: torrentidreturn,
                     peers: torrent.numPeers + (torrent.numPeers === 1 ? ' peer' : ' peers'),
                     percent: Math.round(torrent.progress * 100 * 100) / 100,
                     downloaded: prettyBytes(torrent.downloaded),
