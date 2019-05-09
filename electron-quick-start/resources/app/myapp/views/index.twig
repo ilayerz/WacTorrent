@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>WebTorrent video player</title>
+    <title>WebTorrent</title>
     <style>
         #output video {
             width: 100%;
@@ -65,7 +65,7 @@
             <span class="show-seed">Seeding </span>
             <code>
                 <!-- Informative link to the torrent file -->
-                <a id="torrentLink" href="C:\Users\02300bd\Downloads\sintel.torrent">sintel.torrent</a>
+                <a id="torrentLink" href="#">Torrent</a>
             </code>
             <span class="show-leech"> from </span>
             <span class="show-seed"> to </span>
@@ -83,16 +83,13 @@
 <div id="torrents">
 
 </div>
+{# Cette ligne permet de lancer electron avec tous les scripts sinon ça ne fonctionne pas #}
 <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
 <script
         src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
-<!-- Include the latest version of WebTorrent -->
-<script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
 
-<!-- Moment is used to show a human-readable remaining time -->
-<script src="http://momentjs.com/downloads/moment.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
 <script>
@@ -110,12 +107,22 @@
 
 
 
+        // On initialise le socket côté client
         var socket = io();
+
+        // On récupère l'id du magnet du torrent ( on peut en trouver sur divers sites + ou - légal ) ainsi que le
+        //     path et on met le tout dans un Array ( ici data )
         var data = {
                 id: $('#magnet').val(),
                 path: $('#path').val()
             };
-        socket.emit('test', data);
+
+
+        // On "émite" à socket l'array data, ça signifie que l'on envoie cet array au côté serveur ( back / app.js )
+        // Cet évènement se nomme 'torrent', on le récuperera en back avec socket.on('torrent')
+        socket.emit('torrent', data);
+
+        //On écoute l'évènement 'progress' qui sera envoyé par notre serveur afin de mettre à jour le front
         socket.on('progress', function (msg) {
             $numPeers.innerHTML = msg.peers;
             $progressBar.style.width = msg.percent + '%';
@@ -126,12 +133,14 @@
             $remaining.innerHTML = msg.remaining
         })
 
+        //On écoute l'évènement finish pour mettre à jour le front
         socket.on('finish', function (msg) {
             $body.className += ' is-seed'
             $remaining.innerHTML = 'done'
         })
     })
 </script>
+{# Cette ligne permet de lancer electron avec tous les scripts sinon ça ne fonctionne pas #}
 <script>if (window.module) module = window.module;</script>
 </body>
 </html>

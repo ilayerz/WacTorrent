@@ -54,39 +54,41 @@ app.use(function(err, req, res, next) {
 });
 var torrentidreturn = 0;
 
+
+
+
+
+
+// On écoute l'évènement connection, ça correspond à l'évènement lorsque le front initialise le script avec "var socket = io();"
 io.on('connection', function(socket){
-    socket.on('test', function (data) {
+    //On écoute l'évènement torrent, cet évènement permettra de lancer le script de WebTorrent
+    socket.on('torrent', function (data) {
         console.log(data);
-
-
-
-
-
-
-
-
-
 
         console.log('referf');
 
+        //On initialise WebTorrent
         var client = new WebTorrent()
-
-// Sintel, a free, Creative Commons movie
         var torrentId = data.id;
 
         console.log(data.id);
 
+        //On ajoute le magnet au webtorrent, ça le téléchargera dans le dossier envoyer dans "path"
         client.add(torrentId, {path: data.path }, function (torrent) {
             // Torrents can contain many files. Let's use the .mp4 file
 
             io.emit('create', torrentidreturn);
             torrentidreturn++;
 
+            //On récupère le fichier dans le torrent et on le return afin de lancer le téléchargement
             var file = torrent.files.find(function (file) {
                 return file
             })
 
+            //Lorsque le torrent a fini de télécharger, on appelle la fonctio OnDone
             torrent.on('done', onDone)
+            //On met une intervalle sur OnProgress afin d'appeller la fonction toutes les 0.5 sec et pouvoir récupérer
+            // les informations pendant le téléchargement
             var interval = setInterval(onProgress, 500)
             var data = {};
             onProgress()
@@ -116,36 +118,19 @@ io.on('connection', function(socket){
                     upspeed : prettyBytes(torrent.uploadSpeed) + '/s',
                     remaining: remaining
                 };
+
+                //On émit au front l'évènement progress avec un array contenant toutes les informations sur le
+                // téléchargement
                 io.emit('progress', data);
-                // Peers
-                // $numPeers.innerHTML = torrent.numPeers + (torrent.numPeers === 1 ? ' peer' : ' peers')
-                //
-                // // Progress
-                // var percent = Math.round(torrent.progress * 100 * 100) / 100
-                // $progressBar.style.width = percent + '%'
-                // $downloaded.innerHTML = prettyBytes(torrent.downloaded)
-                // $total.innerHTML = prettyBytes(torrent.length)
-                //
-                // // Remaining time
-                // var remaining
-                // if (torrent.done) {
-                //     remaining = 'Done.'
-                // } else {
-                //     remaining = moment.duration(torrent.timeRemaining / 1000, 'seconds').humanize()
-                //     remaining = remaining[0].toUpperCase() + remaining.substring(1) + ' remaining.'
-                // }
-                // $remaining.innerHTML = remaining
-                //
-                // // Speed rates
-                // $downloadSpeed.innerHTML = prettyBytes(torrent.downloadSpeed) + '/s'
-                // $uploadSpeed.innerHTML = prettyBytes(torrent.uploadSpeed) + '/s'
             }
             function onDone () {
-                // $body.className += ' is-seed'
+                //On clear l'interval sinon on va recevoir les données absolument tout le temps et on envoie au front
+                //l'évènement finish pour actualiser le front lorsque c'est fini
                 clearInterval(interval);
                 io.emit('finish', data)
             }
 
+            //Cette fonction permet de return les bytes mais de façon plus "jolie" :)
             function prettyBytes(num) {
                 var exponent, unit, neg = num < 0, units = ['B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
                 if (neg) num = -num
@@ -167,9 +152,5 @@ io.on('connection', function(socket){
     })
     console.log('connected');
 });
-
-io.on('test', function (msg) {
-    console.log(msg);
-})
 
 module.exports = app;
