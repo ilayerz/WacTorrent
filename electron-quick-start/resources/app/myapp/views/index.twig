@@ -50,8 +50,15 @@
 
 </head>
 <body>
+<select id="myselect">
+    <option value="magnet">magnet</option>
+    <option value="file">file</option>
+</select>
+<div class="input">
+    <input type="text" placeholder="your magnet" id="magnet">
+</div>
+
 <input type="text" id="path" value="C:\Users\02300bd\Downloads"/>
-<input type="text" placeholder="your magnet" id="magnet">
 <input type="button" id="dl" value="download">
 <div id="torrents">
 
@@ -68,6 +75,23 @@
 <script>
     var i = 0;
     var x = 0;
+
+    var isMagnet = true;
+
+    $('#myselect').on('change', function () {
+        console.log($("#myselect option:selected").val());
+        if($("#myselect option:selected").val() === "file")
+        {
+            $('.input').html('<input type="file" id="pathfile">')
+            isMagnet = false;
+        }else if($("#myselect option:selected").val() === "magnet")
+        {
+            $('.input').html('<input type="text" placeholder="your magnet" id="magnet">')
+            isMagnet = true;
+        }
+    });
+
+
     $('#dl').on('click', function () {
 
 
@@ -105,13 +129,24 @@
         // On initialise le socket côté client
         var socket = io();
 
-        // On récupère l'id du magnet du torrent ( on peut en trouver sur divers sites + ou - légal ) ainsi que le
-        //     path et on met le tout dans un Array ( ici data )
-        var data = {
+        if(isMagnet === false)
+        {
+            var data = {
+                id: $('#pathfile')[0].files[0],
+                path: $('#path').val(),
+                number: i,
+            };
+        }else{
+            var data = {
                 id: $('#magnet').val(),
                 path: $('#path').val(),
                 number: i,
             };
+        }
+
+        // On récupère l'id du magnet du torrent ( on peut en trouver sur divers sites + ou - légal ) ainsi que le
+        //     path et on met le tout dans un Array ( ici data )
+
         i++;
 
 
