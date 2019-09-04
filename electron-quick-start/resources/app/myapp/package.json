@@ -16,6 +16,6 @@
     "pug": "2.0.0-beta11",
     "socket.io": "^2.2.0",
     "twig": "^1.13.3",
-    "webtorrent": "^0.103.1"
+    "webtorrent": "^0.107.6"
   }
 }
